@@ -1,50 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Credit Card Form Page">
-    <meta name="author" content="Your Name">
-    <title>Credit Card Form</title>
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <a href="../index.html">Back to Main</a>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Credit Card Form</h1>
-        <form action="#" method="POST">
-            <div class="card">
-                <!-- Card Front -->
-                <div class="card-front">
-                    <label for="card-number">Card Number</label>
-                    <input type="text" id="card-number" name="card-number" required placeholder="XXXX XXXX XXXX XXXX">
-
-                    <label for="card-holder">Card Holder</label>
-                    <input type="text" id="card-holder" name="card-holder" required placeholder="John Doe">
-
-                    <label for="expiry-date">Expiry Date</label>
-                    <input type="month" id="expiry-date" name="expiry-date" required>
-
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" required placeholder="XXX">
-                </div>
-
-                <!-- Card Back -->
-                <div class="card-back">
-                    <div class="card-stripe"></div>
-                    <label for="back-cvv">Back CVV</label>
-                    <input type="text" id="back-cvv" name="back-cvv" required placeholder="XXX">
-                </div>
-            </div>
-
-            <button type="submit">Submit</button>
-        </form>
-    </main>
-</body>
-</html>
+<div id="card-success" class="hidden">
+    <i class="fa fa-check"></i>
+    <p>Payment Successful!</p>
+  </div>
+  
+  <div id="form-errors" class="hidden">
+    <i class="fa fa-exclamation-triangle"></i>
+    <p id="card-error">Card error</p>
+  </div>
+  
+  <div id="form-container">
+    <!-- Card Front -->
+    <div id="card-front">
+      <div id="shadow"></div>
+      <div id="image-container">
+        <span id="amount">paying: <strong>$99</strong></span>
+        <span id="card-image">
+          <!-- You can place a logo or card image here -->
+        </span>
+      </div>
+  
+      <!-- Card Number -->
+      <label for="card-number">Card Number</label>
+      <input type="text" id="card-number" placeholder="1234 5678 9101 1112" required maxlength="16">
+  
+      <!-- Cardholder Name -->
+      <div id="cardholder-container">
+        <label for="card-holder">Card Holder</label>
+        <input type="text" id="card-holder" placeholder="e.g. John Doe" required />
+      </div>
+  
+      <!-- Expiry Date -->
+      <div id="exp-container">
+        <label for="card-exp">Expiration</label>
+        <input id="card-month" type="text" placeholder="MM" required maxlength="2">
+        <input id="card-year" type="text" placeholder="YY" required maxlength="2">
+      </div>
+  
+      <!-- CVC -->
+      <div id="cvc-container">
+        <label for="card-cvc"> CVC/CVV</label>
+        <input id="card-cvc" placeholder="XXX-X" type="text" required minlength="3" maxlength="4">
+        <p>Last 3 or 4 digits</p>
+      </div>
+    </div>
+  
+    <!-- Card Back -->
+    <div id="card-back">
+      <div id="card-stripe"></div>
+    </div>
+  
+    <!-- Hidden Token Field -->
+    <input type="text" id="card-token" style="display:none;" />
+  
+    <!-- Submit Button -->
+    <button type="button" id="card-btn">Submit</button>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script src="https://use.fontawesome.com/f1e0bf0cbc.js"></script>
+  

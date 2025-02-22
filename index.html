@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Credit Card Form Page">
+    <meta name="author" content="Your Name">
+    <title>Credit Card Form</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Back to Main</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Credit Card Form</h1>
+        <form action="#" method="POST">
+            <div class="card">
+                <!-- Card Front -->
+                <div class="card-front">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" name="card-number" required placeholder="XXXX XXXX XXXX XXXX">
+
+                    <label for="card-holder">Card Holder</label>
+                    <input type="text" id="card-holder" name="card-holder" required placeholder="John Doe">
+
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="month" id="expiry-date" name="expiry-date" required>
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required placeholder="XXX">
+                </div>
+
+                <!-- Card Back -->
+                <div class="card-back">
+                    <div class="card-stripe"></div>
+                    <label for="back-cvv">Back CVV</label>
+                    <input type="text" id="back-cvv" name="back-cvv" required placeholder="XXX">
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

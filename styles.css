@@ -1,88 +1,80 @@
-/* General styles for the form */
-#form-container {
-    width: 300px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  #card-front {
+    width: 400px;
+    height: 250px;
+    background: #2a2a2a; /* Dark card background */
+    border-radius: 15px;
+    color: #fff;
     padding: 20px;
-  }
-  
-  #card-front, #card-back {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  #card-number, #card-holder, #card-month, #card-year, #card-cvc {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  #card-front label, #cardholder-container label, #exp-container label, #cvc-container label {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  #amount {
-    font-size: 18px;
-    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   #card-image {
-    margin-top: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
   }
   
-  #card-btn {
+  #card-image img {
+    width: 50px; /* Adjust size as needed */
+  }
+  
+  label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  #card-number-container {
+    position: relative;
+  }
+  
+  #card-number {
     width: 100%;
-    padding: 15px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  #card-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  #card-success, #form-errors {
-    text-align: center;
-    display: none;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* Card Back styles */
-  #card-back {
-    background-color: #343a40;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
-  }
-  
-  #card-stripe {
-    height: 20px;
-    background-color: #777;
+    padding: 10px 40px 10px 10px; /* Extra padding to avoid overlap */
     margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    color: #333;
+    letter-spacing: 2px;
   }
   
-  #card-stripe::before {
-    content: '#### #### #### ####';
-    color: #fff;
-    font-weight: bold;
+  input:focus {
+    outline: none;
+    border: 2px solid #fff;
   }
   
-  /* Shadow Effect */
-  #shadow {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  #cardholder-container,
+  #exp-container,
+  #cvc-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #exp-container input,
+  #cvc-container input {
+    width: 30%;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    border: none;
+  }
+  
+  button:hover {
+    background-color: #45a049;
   }
   
